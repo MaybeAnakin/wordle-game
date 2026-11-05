@@ -74,7 +74,7 @@ window.addEventListener("keydown", function (event) {
 
             } else {
                 
-                Console("Sorry, try again!");
+                console.log("Sorry, try again!");
 
 
 
