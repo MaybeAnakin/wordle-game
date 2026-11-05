@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+background-color: #121213;
+color: white;
+font-family: Arial, sans-serif;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.game {
+width: 100%;
+max-width: 550px;
+padding: 20px;
+}
+
+header {
+text-align: center;
+margin-bottom: 30px;
+}
+
+header h1 {
+font-size: 35px;
+letter-spacing: 5px;
+margin-bottom: 8px;
+}
+
+header p {
+color: #818384;
+font-size: 14px;
+}
+
+/* Game Board */
+
+.board {
+display: flex;
+flex-direction: column;
+gap: 6px;
+align-items: center;
+margin-bottom: 35px;
+}
+
+.row {
+display: flex;
+gap: 6px;
+}
+
+.box {
+width: 55px;
+height: 55px;
+border: 2px solid #3a3a3c;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+/* Keyboard */
+
+.keyboard {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.key-row {
+display: flex;
+justify-content: center;
+gap: 5px;
+}
+
+.key {
+background-color: #818384;
+color: white;
+border: none;
+border-radius: 4px;
+height: 55px;
+flex: 1;
+max-width: 45px;
+font-size: 14px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.key:hover {
+background-color: #a0a0a0;
+}
+
+.action {
+max-width: 75px;
+font-size: 11px;
+}
+
+#restart-btn {
+display: block;
+margin: 25px auto 0;
+padding: 12px 25px;
+background-color: #538d4e;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+}
+
+/* Wordle Colors - JavaScript will add these classes */
+
+.box.correct {
+background-color: #538d4e;
+border-color: #538d4e;
+}
+
+.box.present {
+background-color: #b59f3b;
+border-color: #b59f3b;
+}
+
+.box.absent {
+background-color: #3a3a3c;
+border-color: #3a3a3c;
+}
+
+/* Responsive */
+
+@media (max-width: 400px) {
+.box {
+width: 45px;
+height: 45px;
+}
+
+
+.key {
+    height: 45px;
+    font-size: 12px;
+}
+
+
+}
