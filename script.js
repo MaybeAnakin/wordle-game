@@ -74,7 +74,7 @@ window.addEventListener("keydown", function (event) {
 
             } else {
                 
-                alert("Sorry, try again!");
+                Console("Sorry, try again!");
 
 
 
@@ -82,7 +82,7 @@ window.addEventListener("keydown", function (event) {
 
             let remainingLetters = randomWord;
 
-// First pass: Find green letters
+
 for (let i = 0; i < 5; i++) {
     if (boxes[i].textContent === randomWord[i]) {
         boxes[i].classList.add("correct");
@@ -94,7 +94,6 @@ for (let i = 0; i < 5; i++) {
     }
 }
 
-// Second pass: Find yellow and gray letters
 for (let i = 0; i < 5; i++) {
     if (!boxes[i].classList.contains("correct")) {
 
