@@ -5,6 +5,10 @@ let keys = document.getElementsByClassName("key");
 let enterKey = document.getElementById("enter");
 let backspaceKey = document.getElementById("backspace");
 let restartbtn = document.getElementById("restart-btn");
+let resultModal = document.getElementById("result-modal");
+let resultTitle = document.getElementById("result-title");
+let resultMessage = document.getElementById("result-message");
+let playAgain = document.getElementById("play-again");
 
 let Words = [
 "about","above","abuse","actor","acute","adapt","admit","adopt","adult","after",
@@ -70,6 +74,20 @@ let gameOver = false;
 
 
 
+function showModal(won) {
+    resultModal.classList.add("active");
+
+    if (won) {
+        resultTitle.textContent = "🎉 You Won!";
+        resultMessage.textContent = "Amazing! You guessed the correct word.";
+    } else {
+        resultTitle.textContent = "😢 Game Over!";
+        resultMessage.textContent = `The correct word was: ${randomWord.toUpperCase()}`;
+    }
+}
+
+
+
 window.addEventListener("keydown", function (event) {
 
     if (gameOver) {
@@ -100,12 +118,14 @@ window.addEventListener("keydown", function (event) {
 
         if (guess.length === 5) {
             if (guess === randomWord) {
-                alert("Congratulations! You guessed the word!");
+                
                 gameOver = true;
+                showModal(true);
 
             } else {
                 
                 console.log("Sorry, try again!");
+                
 
 
 
@@ -168,7 +188,8 @@ for (let i = 0; i < 5; i++) {
         }
     }
 }
-
+            
+            
 
             if(randomWord !== guess){
                 currentRow++;
@@ -178,8 +199,9 @@ for (let i = 0; i < 5; i++) {
                 if(currentRow < 6){
                     boxes = rows[currentRow].getElementsByClassName("box");
                 }else{
-                    alert("Game Over! The correct word was: " + randomWord);
+                    // alert("Game Over! The correct word was: " + randomWord);
                     gameOver = true;
+                    showModal(false);
                 }
             }
 
@@ -219,4 +241,8 @@ keys.forEach(function (key) {
  restartbtn.addEventListener("click", function () {
             location.reload();
         
+});
+
+playAgain.addEventListener("click", function () {
+    location.reload();
 });

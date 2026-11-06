@@ -99,6 +99,11 @@ max-width: 75px;
 font-size: 11px;
 }
 
+#enter {
+max-width: 75px;
+background-color: #538d4e;
+}
+
 #restart-btn {
 display: block;
 margin: 25px auto 0;
@@ -111,7 +116,7 @@ cursor: pointer;
 font-weight: bold;
 }
 
-/* Wordle Colors - JavaScript will add these classes */
+
 
 .box.correct {
 background-color: #538d4e;
@@ -128,7 +133,81 @@ background-color: #3a3a3c;
 border-color: #3a3a3c;
 }
 
-/* Responsive */
+
+.key.correct {
+    background-color: #538d4e;
+    color: white;
+}
+
+.key.present {
+    background-color: #b59f3b;
+    color: white;
+}
+
+.key.absent {
+    background-color: #3a3a3c;
+    color: white;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #1f1f1f;
+    color: white;
+    padding: 35px;
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #444;
+    animation: popup 0.3s ease;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+#play-again {
+    background: #538d4e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#play-again:hover {
+    background: #65a85e;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 @media (max-width: 400px) {
 .box {
