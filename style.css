@@ -99,6 +99,11 @@ max-width: 75px;
 font-size: 11px;
 }
 
+#backspace {
+max-width: 75px;
+background-color: #ec0707;
+}
+
 #enter {
 max-width: 75px;
 background-color: #538d4e;
